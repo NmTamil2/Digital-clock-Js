@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
+
+    <script>
+        let hours = document.getElementById("hrs");
+        let minutes = document.getElementById("min");
+        let seconds = document.getElementById("sec");
+
+        setInterval (()=>{
+
+        let currenttime = new Date();
+        console.log(currenttime);
+
+        if (hours>12) {
+            return hours = hours - 12
+            }
+    
+
+        hours.innerHTML = (currenttime.getHours()<10?"0":"")+currenttime.getHours();
+        minutes.innerHTML = (currenttime.getMinutes()<10?"0":"")+currenttime.getMinutes();
+        seconds.innerHTML = (currenttime.getSeconds()<10?"0":"")+currenttime.getSeconds(); 
+        }, 1000)
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
